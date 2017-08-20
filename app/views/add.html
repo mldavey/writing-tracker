@@ -1,0 +1,48 @@
+<p>Please add a new entry below.</p>
+
+<form name="addEntry" ng-submit="add()" novalidate>
+	<fieldset>
+		<div class="form-group">
+			<label for="project">Project:</label>
+			<select name="project" class="form-control" ng-model="entry.project" ng-required="true">
+				<option>Work in Progress #1</option>
+				<option>Work in Progress #2</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="startDate">Start Date:*</label>
+			<input type="text" name="startDate" class="form-control" placeholder="Start Date" ng-model="entry.startDate" ng-required="true" ng-change="calculateTimeSpent()">
+		</div>
+		<div class="form-group">
+			<label for="startTime">Start Time:*</label>
+			<input type="text" name="startTime" class="form-control" placeholder="Start Time" ng-model="entry.startTime" ng-required="true" ng-change="calculateTimeSpent()">
+		</div>
+		<div class="form-group">
+			<label for="endDate">End Date:*</label>
+			<input type="text" name="endDate" class="form-control" placeholder="Start Date" ng-model="entry.endDate" ng-required="true" ng-change="calculateTimeSpent()">
+		</div>
+		<div class="form-group">
+			<label for="endTime">End Time:*</label>
+			<input type="text" name="endTime" class="form-control" placeholder="End Time" ng-model="entry.endTime" ng-required="true" ng-change="calculateTimeSpent()">
+		</div>
+		<div class="form-group">
+			<label for="hoursSpent">Time Spent in Hours:</label>
+			<input type="text" name="hoursSpent" class="form-control" placeholder="Time Spent" ng-model="entry.hoursSpent" ng-required="true" readonly>
+		</div>
+		<div class="form-group">
+			<label for="accomplished">Accomplished:</label>
+			<textarea name="accomplished" class="form-control" ng-model="entry.accomplished"></textarea>
+		</div>
+		<div class="form-group">
+			<label for="wordsCompleted">Words Completed:</label>
+			<input type="text" name="wordsCompleted" class="form-control" ng-model="entry.wordsCompleted" />
+		</div>
+		<div class="form-group">
+			<label for="notes">Notes:</label>
+			<textarea name="notes" class="form-control" ng-model="entry.notes"></textarea>
+		</div>
+	</fieldset>
+	<!-- Hidden fields -->
+	<input type="hidden" name="id" ng-model="entry.id" />
+	<button type="submit">Add New Entry</button>
+</form>
